@@ -14,3 +14,13 @@ body {
 #kategori:hover::-webkit-scrollbar {
     width: 2px;
 } */
+
+.calendar-wrapper {
+    width: 100%;
+}
+
+.calendar {
+    display: flex;
+    gap: 8px;
+    transform: translateX(0);
+}

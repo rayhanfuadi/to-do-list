@@ -22,32 +22,50 @@
     </nav>
 
     <!-- Tanggal Kalender Start -->
-    <div id="" class="flex justify-center gap-x-[8px] mb-[24px]">
-        <div class="grid text-light min-w-[62px] rounded-[12px] gap-y-[8px] py-[6px] bg-black text-center shadow-box1">
-            <p class="font-medium text-[14px]">August</p>
-            <p class="font-semibold text-[20px]">23</p>
-            <p class="text-[14px]">Sun</p>
+    <div class="year-display text-white text-center mb-4">
+        <select id="calendar-year" class="text-2xl font-medium bg-primary px-[8px] text-dark border-none rounded-lg">
+            <!-- Option tahun akan diisi melalui JavaScript -->
+        </select>
+    </div>
+    <div id="" class="calendar-wrapper flex justify-center gap-x-[8px] mb-[24px]">
+        <div class="calendar flex gap-x-[8px] transition-transform duration-300">
+            <!-- <div
+                class="grid text-light min-w-[62px] rounded-[12px] gap-y-[8px] py-[6px] bg-black text-center shadow-box1">
+                <p class="font-medium text-[14px]">August</p>
+                <p class="font-semibold text-[20px]">23</p>
+                <p class="text-[14px]">Sun</p>
+            </div>
+            <div
+                class="grid text-light min-w-[62px] rounded-[12px] gap-y-[8px] py-[6px] bg-black text-center shadow-box1">
+                <p class="font-medium text-[14px]">August</p>
+                <p class="font-semibold text-[20px]">24</p>
+                <p class="text-[14px]">Sun</p>
+            </div>
+            <div
+                class="grid text-dark min-w-[62px] rounded-[12px] gap-y-[8px] py-[6px] bg-primary text-center shadow-box1">
+                <p class="font-medium text-[14px]">August</p>
+                <p class="font-semibold text-[20px]">25</p>
+                <p class="text-[14px]">Sun</p>
+            </div>
+            <div
+                class="grid text-light min-w-[62px] rounded-[12px] gap-y-[8px] py-[6px] bg-black text-center shadow-box1">
+                <p class="font-medium text-[14px]">August</p>
+                <p class="font-semibold text-[20px]">26</p>
+                <p class="text-[14px]">Sun</p>
+            </div>
+            <div
+                class="grid text-light min-w-[62px] rounded-[12px] gap-y-[8px] py-[6px] bg-black text-center shadow-box1">
+                <p class="font-medium text-[14px]">August</p>
+                <p class="font-semibold text-[20px]">27</p>
+                <p class="text-[14px]">Sun</p>
+            </div> -->
         </div>
-        <div class="grid text-light min-w-[62px] rounded-[12px] gap-y-[8px] py-[6px] bg-black text-center shadow-box1">
-            <p class="font-medium text-[14px]">August</p>
-            <p class="font-semibold text-[20px]">24</p>
-            <p class="text-[14px]">Sun</p>
-        </div>
-        <div class="grid text-dark min-w-[62px] rounded-[12px] gap-y-[8px] py-[6px] bg-primary text-center shadow-box1">
-            <p class="font-medium text-[14px]">August</p>
-            <p class="font-semibold text-[20px]">25</p>
-            <p class="text-[14px]">Sun</p>
-        </div>
-        <div class="grid text-light min-w-[62px] rounded-[12px] gap-y-[8px] py-[6px] bg-black text-center shadow-box1">
-            <p class="font-medium text-[14px]">August</p>
-            <p class="font-semibold text-[20px]">26</p>
-            <p class="text-[14px]">Sun</p>
-        </div>
-        <div class="grid text-light min-w-[62px] rounded-[12px] gap-y-[8px] py-[6px] bg-black text-center shadow-box1">
-            <p class="font-medium text-[14px]">August</p>
-            <p class="font-semibold text-[20px]">27</p>
-            <p class="text-[14px]">Sun</p>
-        </div>
+    </div>
+    <div class="flex justify-center gap-x-[240px] mb-[24px]">
+        <button id="prev"
+            class="text-dark text-[14px] font-medium bg-primary px-[8px] py-[2px] rounded-full">Prev</button>
+        <button id="next"
+            class="text-dark text-[14px] font-medium bg-primary px-[8px] py-[2px] rounded-full">Next</button>
     </div>
     <!-- Tanggal Kalender End -->
 
@@ -68,20 +86,19 @@
     <!-- Kategori End -->
 
     <!-- To Do List Container Start -->
-    <div class="flex rounded-full gap-x-[16px] mb-[24px]">
+    <div class="flex gap-x-[16px] mb-[24px]">
 
         <!-- Input Datas Start -->
         <div class="px-[16px] py-[4px] rounded-full border-primary border-[1px]">
-            <input class="bg-transparent outline-none text-white text-[12px]" type="text"
+            <input class="bg-transparent outline-none text-white text-[12px]" type="text" for="level"
                 placeholder="Masukan List Agenda">
         </div>
         <select
             class="bg-transparent border-primary border-[1px] text-[12px] text-light font-medium rounded-full px-[8px]"
-            name="" id="">
-            <option class="text-dark font-medium bg-primary" value="">Level</option>
-            <option class="text-dark font-medium bg-primary" value="low">Low</option>
-            <option class="text-dark font-medium bg-primary" value="med">Medium</option>
-            <option class="text-dark font-medium bg-primary" value="high">High</option>
+            name="" id="level">
+            <option class="text-dark font-medium bg-primary" value="Low">Low</option>
+            <option class="text-dark font-medium bg-primary" value="Medium">Medium</option>
+            <option class="text-dark font-medium bg-primary" value="High">High</option>
         </select>
         <button id="addButton"
             class="font-medium text-[12px] px-[8px] py-[4px] bg-primary rounded-lg text-dark">Tambah</button>

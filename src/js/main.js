@@ -7,6 +7,8 @@ const deleteAllButton = document.querySelector(".delete-all");
 const filters = document.querySelectorAll(".filter");
 let filter = '';
 
+const priority = document.querySelector('#priority');
+
 showTodos();
 
 function getTodoHtml(todo, index) {
