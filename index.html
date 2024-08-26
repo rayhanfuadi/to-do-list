@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="src/clash-display.css">
 </head>
 
-<body class="bg-dark px-[20px]">
+<body class="bg-dark px-[20px] lg:px-[200px]">
     <nav class="flex justify-between items-center py-[28px]">
         <div class="block text-white">
             <img src="img/user.svg" alt="">
@@ -53,17 +53,24 @@
 
     <!-- Kategori Start -->
     <div class="flex justify-center">
-        <div id="kategori" class="mb-[24px] text-nowrap flex justify-start gap-x-[10px] overflow-x-auto">
-            <a class="text-dark bg-primary px-[24px] py-[4px] rounded-full font-medium" href="todolist.html">All</a>
-            <a class="text-dark bg-primary px-[24px] py-[4px] rounded-full font-medium" href="">To Do</a>
-            <a class="text-dark bg-primary px-[24px] py-[4px] rounded-full font-medium" href="">In Progress</a>
-            <a class="text-dark bg-primary px-[24px] py-[4px] rounded-full font-medium" href="">Done</a>
+        <div id="kategori" class="filters mb-[24px] text-nowrap flex justify-start gap-x-[10px] overflow-x-auto">
+            <div onclick="showTodos()"
+                class="filter text-dark bg-primary px-[24px] py-[4px] rounded-full font-medium cursor-pointer">
+                All</div>
+            <div data-filter="pending"
+                class="filter text-dark bg-primary px-[24px] py-[4px] rounded-full font-medium cursor-pointer">
+                To Do</div>
+            <div data-filter="completed"
+                class="filter text-dark bg-primary px-[24px] py-[4px] rounded-full font-medium cursor-pointer">
+                Done</div>
         </div>
     </div>
     <!-- Kategori End -->
 
     <!-- To Do List Container Start -->
     <div class="flex rounded-full gap-x-[16px] mb-[24px]">
+
+        <!-- Input Datas Start -->
         <div class="px-[16px] py-[4px] rounded-full border-primary border-[1px]">
             <input class="bg-transparent outline-none text-white text-[12px]" type="text"
                 placeholder="Masukan List Agenda">
@@ -76,32 +83,18 @@
             <option class="text-dark font-medium bg-primary" value="med">Medium</option>
             <option class="text-dark font-medium bg-primary" value="high">High</option>
         </select>
-        <button class="font-medium text-[12px] px-[8px] py-[4px] bg-primary rounded-lg text-dark">Tambah</button>
+        <button id="addButton"
+            class="font-medium text-[12px] px-[8px] py-[4px] bg-primary rounded-lg text-dark">Tambah</button>
     </div>
+    <!-- Input Datas Start -->
 
-    <div class="grid gap-y-[24px]">
-        <div class="flex justify-between gap-x-[16px] bg-black p-[16px] rounded-[12px] shadow-box2">
-            <div class="grid justify-items-start content-between">
-                <div class="flex items-center gap-x-[6px]">
-                    <input class="peer" id="checkbox1" type="checkbox">
-                    <label for="checkbox1"
-                        class="text-light font-medium peer-checked:text-gray peer-checked:line-through cursor-pointer">To
-                        Do List Agenda</label>
-                </div>
-                <span class="text-primary text-[12px] flex gap-x-[4px]"><img class="text-primary"
-                        src="img/clock.svg">10:00 Am</span>
-            </div>
-            <div class="grid justify-items-end content-between text-nowrap">
-                <p class="text-gray text-[12px] mb-[8px]">Kategori: <span class="text-light">Low</span></p>
-                <p
-                    class="bg-[#282507] w-fit h-fit text-center text-[10px] font-medium px-[8px] py-[2px] rounded-full text-primary mb-[8px]">
-                    Done</p>
-                <a class="flex w-fit h-fit justify-center gap-x-[4px] bg-merah py-[2px] px-[8px] rounded-full" href="#">
-                    <img src="img/trash.svg" alt="">
-                    <p class="text-light font-medium text-[10px]">Hapus</p>
-                </a>
-            </div>
-        </div>
+    <!-- To Do List Agenda Start -->
+    <div class="empty-image grid justify-center hidden">
+        <img class="w-[200px] mb-2" src="img/404.svg" alt="">
+        <p class="text-light font-medium text-[24px]">Tidak Ada Agenda</p>
+    </div>
+    <!-- Box Start -->
+    <div class="todos grid gap-y-[24px]">
         <div class="flex justify-between gap-x-[16px] bg-black p-[16px] rounded-[12px] shadow-box2">
             <div class="grid justify-items-start content-between">
                 <div class="flex items-center gap-x-[6px]">
@@ -126,6 +119,16 @@
             </div>
         </div>
     </div>
+    <!-- Box End -->
+    <!-- Delete All Start -->
+    <div class="flex justify-end mt-[24px]">
+        <button
+            class="delete-all py-[8px] px-[12px] rounded-[8px] bg-merah text-light font-medium text-[12px] flex items-center justify-center gap-x-2 w-[160px]">
+            <img src="img/trash.svg" alt="">Hapus
+            Semua</button>
+    </div>
+    <!-- Delete All End -->
+    <!-- To Do List Agenda End -->
     <!-- To Do List Container End -->
 
     <script src="src/js/script.js"></script>
