@@ -1,13 +1,13 @@
-let inputNama = prompt('Masukan Nama Anda', 'Ehan');
-const namaUser = document.getElementById('namaUser');
-const isiNama = document.createElement('p');
-isiNama.textContent = `Nama: ${inputNama}`;
-namaUser.appendChild(isiNama);
+// let inputNama = prompt('Masukan Nama Anda', 'Ehan');
+// const namaUser = document.getElementById('namaUser');
+// const isiNama = document.createElement('p');
+// isiNama.textContent = `Nama: ${inputNama}`;
+// namaUser.appendChild(isiNama);
 
-let role = prompt('Role Anda', 'Ui/Ux Designer')
-const isiRole = document.createElement('p');
-isiRole.textContent = `Role: ${role}`;
-namaUser.appendChild(isiRole);
+// let role = prompt('Role Anda', 'Ui/Ux Designer')
+// const isiRole = document.createElement('p');
+// isiRole.textContent = `Role: ${role}`;
+// namaUser.appendChild(isiRole);
 
 const input = document.querySelector("input");
 const addButton = document.querySelector("#addButton");
@@ -170,8 +170,11 @@ function updateStatus(todo) {
   localStorage.setItem("todos", JSON.stringify(todosJson));
 }
 
+
 function remove(todo) {
   const index = todo.dataset.index;
+  const confirmDelete = confirm("Yakin ingin menghapus todo ini?");
+  if (!confirmDelete) return;
   todosJson.splice(index, 1);
   showTodos();
   localStorage.setItem("todos", JSON.stringify(todosJson));
@@ -190,7 +193,10 @@ filters.forEach(function (el) {
   });
 });
 
+
 deleteAllButton.addEventListener("click", () => {
+    const confirmDelete = confirm("Yakin ingin menghapus semua todo?");
+    if (!confirmDelete) return;
     todosJson = [];
     localStorage.setItem("todos", JSON.stringify(todosJson));
     showTodos();
