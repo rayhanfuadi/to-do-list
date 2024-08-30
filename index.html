@@ -11,108 +11,84 @@
     <link rel="stylesheet" href="src/clash-display.css">
 </head>
 
-<body class="bg-dark px-[20px] lg:px-[200px]">
-    <nav class="flex justify-between items-center py-[28px]">
-        <div class="block text-white">
-            <img src="img/user.svg" alt="">
-            <p>Ehan</p>
+<body class="bg-dark">
+    <nav class="flex justify-between items-center py-[28px] px-[20px] lg:px-[200px]">
+        <div class="flex text-white">
+            <img src="img/user.svg" width="32" alt="">
+            <div id="namaUser" class="block text-[12px] pl-3"></div>
         </div>
-        <div class="font-semibold text-white text-[20px]">Today's Tasks</div>
         <img src="img/notif.svg" alt="">
     </nav>
 
-    <!-- Tanggal Kalender Start -->
-    <div class="year-display text-white text-center mb-4">
-        <select id="calendar-year" class="text-2xl font-medium bg-primary px-[8px] text-dark border-none rounded-lg">
-            <!-- Option tahun akan diisi melalui JavaScript -->
-        </select>
-    </div>
-    <div id="" class="calendar-wrapper flex justify-center gap-x-[8px] mb-[24px]">
-        <div class="calendar flex gap-x-[8px] transition-transform duration-300">
-            <!-- <div
-                class="grid text-light min-w-[62px] rounded-[12px] gap-y-[8px] py-[6px] bg-black text-center shadow-box1">
-                <p class="font-medium text-[14px]">August</p>
-                <p class="font-semibold text-[20px]">23</p>
-                <p class="text-[14px]">Sun</p>
-            </div>
-            <div
-                class="grid text-light min-w-[62px] rounded-[12px] gap-y-[8px] py-[6px] bg-black text-center shadow-box1">
-                <p class="font-medium text-[14px]">August</p>
-                <p class="font-semibold text-[20px]">24</p>
-                <p class="text-[14px]">Sun</p>
-            </div>
-            <div
-                class="grid text-dark min-w-[62px] rounded-[12px] gap-y-[8px] py-[6px] bg-primary text-center shadow-box1">
-                <p class="font-medium text-[14px]">August</p>
-                <p class="font-semibold text-[20px]">25</p>
-                <p class="text-[14px]">Sun</p>
-            </div>
-            <div
-                class="grid text-light min-w-[62px] rounded-[12px] gap-y-[8px] py-[6px] bg-black text-center shadow-box1">
-                <p class="font-medium text-[14px]">August</p>
-                <p class="font-semibold text-[20px]">26</p>
-                <p class="text-[14px]">Sun</p>
-            </div>
-            <div
-                class="grid text-light min-w-[62px] rounded-[12px] gap-y-[8px] py-[6px] bg-black text-center shadow-box1">
-                <p class="font-medium text-[14px]">August</p>
-                <p class="font-semibold text-[20px]">27</p>
-                <p class="text-[14px]">Sun</p>
-            </div> -->
-        </div>
-    </div>
-    <div class="flex justify-center gap-x-[240px] mb-[24px]">
-        <button id="prev"
-            class="text-dark text-[14px] font-medium bg-primary px-[8px] py-[2px] rounded-full">Prev</button>
-        <button id="next"
-            class="text-dark text-[14px] font-medium bg-primary px-[8px] py-[2px] rounded-full">Next</button>
-    </div>
-    <!-- Tanggal Kalender End -->
+    <div class="font-semibold text-white text-center text-[20px] lg:text-[28px] mb-[16px] px-[20px] lg:px-[200px]">
+        Today's Tasks</div>
 
-    <!-- Kategori Start -->
-    <div class="flex justify-center">
-        <div id="kategori" class="filters mb-[24px] text-nowrap flex justify-start gap-x-[10px] overflow-x-auto">
-            <div onclick="showTodos()"
-                class="filter text-dark bg-primary px-[24px] py-[4px] rounded-full font-medium cursor-pointer">
-                All</div>
-            <div data-filter="pending"
-                class="filter text-dark bg-primary px-[24px] py-[4px] rounded-full font-medium cursor-pointer">
-                To Do</div>
-            <div data-filter="completed"
-                class="filter text-dark bg-primary px-[24px] py-[4px] rounded-full font-medium cursor-pointer">
-                Done</div>
-        </div>
-    </div>
-    <!-- Kategori End -->
 
     <!-- To Do List Container Start -->
-    <div class="flex gap-x-[16px] mb-[24px]">
-
+    <div class="grid lg:flex w-full h-full items-center gap-[16px] mb-[24px] px-[20px] lg:px-[200px]">
         <!-- Input Datas Start -->
-        <div class="px-[16px] py-[4px] rounded-full border-primary border-[1px]">
-            <input class="bg-transparent outline-none text-white text-[12px]" type="text" for="level"
-                placeholder="Masukan List Agenda">
+        <div class="px-[16px] py-[4px] w-full rounded-lg border-primary border-[1px]">
+            <input class="bg-transparent outline-none w-full text-white text-[12px] lg:text-[16px] lg:py-[8px]"
+                type="text" for="level" placeholder="Masukan List Agenda">
         </div>
-        <select
-            class="bg-transparent border-primary border-[1px] text-[12px] text-light font-medium rounded-full px-[8px]"
-            name="" id="level">
-            <option class="text-dark font-medium bg-primary" value="Low">Low</option>
-            <option class="text-dark font-medium bg-primary" value="Medium">Medium</option>
-            <option class="text-dark font-medium bg-primary" value="High">High</option>
-        </select>
-        <button id="addButton"
-            class="font-medium text-[12px] px-[8px] py-[4px] bg-primary rounded-lg text-dark">Tambah</button>
+        <div class="flex gap-[16px] items-center">
+            <input type="date" id="dateInput"
+                class="input-field bg-transparent text-light text-[14px] border-primary border-[1px] rounded-lg px-[8px] py-[4px] lg:text-[16px] lg:py-[12px]">
+            <select
+                class="bg-transparent border-primary border-[1px] text-[14px] text-light font-medium rounded-lg px-[8px] py-[6px] lg:text-[16px] lg:py-[12px]"
+                name="" id="level">
+                <option class="text-dark font-medium bg-primary" value="Low">Low</option>
+                <option class="text-dark font-medium bg-primary" value="Medium">Medium</option>
+                <option class="text-dark font-medium bg-primary" value="High">High</option>
+            </select>
+            <button id="addButton"
+                class="font-medium w-full text-[12px] px-[8px] py-[6px] bg-primary rounded-lg text-dark hover:bg-hoverp hover:ease-in transition-all duration-100 lg:text-[16px] lg:py-[12px]">Tambah
+            </button>
+        </div>
     </div>
     <!-- Input Datas Start -->
 
+    <!-- Filter Start -->
+    <div class="flex justify-between w-full px-[20px] lg:px-[200px]">
+        <div class="block w-full">
+            <div class="flex text-light mb-2"><img class="mr-[6px]" src="img/filter.svg" width="20" alt="">Filter :
+            </div>
+            <div class="grid gap-[16px] lg:flex lg:justify-between w-full items-center mb-[24px]">
+                <div id="kategori" class="filters text-nowrap flex justify-start gap-x-[10px] overflow-x-auto">
+                    <div onclick="showTodos()"
+                        class="filter text-dark bg-primary px-[24px] py-[4px] rounded-full font-medium cursor-pointer hover:bg-hoverp hover:ease-in transition-all duration-200">
+                        All</div>
+                    <div data-filter="pending"
+                        class="filter text-dark bg-primary px-[24px] py-[4px] rounded-full font-medium cursor-pointer hover:bg-hoverp hover:ease-in transition-all duration-200">
+                        To Do</div>
+                    <div data-filter="completed"
+                        class="filter text-dark bg-primary px-[24px] py-[4px] rounded-full font-medium cursor-pointer hover:bg-hoverp hover:ease-in transition-all duration-200">
+                        Done</div>
+                </div>
+                <div class="flex gap-[16px]">
+                    <input type="date" id="dateFilter"
+                        class="input-field bg-primary font-medium text-dark border-primary border-[1px] rounded-full px-[8px] py-[4px] hover:bg-hoverp hover:ease-in transition-all duration-200">
+                    <button id="refreshButton"
+                        class="font-medium border border-1px border-primary text-[12px] px-[8px] py-[4px] bg-gray-600 rounded-full text-light hover:bg-primary hover:text-dark hover:ease-in transition-all duration-200">
+                        Refresh
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Filter End -->
+
     <!-- To Do List Agenda Start -->
-    <div class="empty-image grid justify-center hidden">
-        <img class="w-[200px] mb-2" src="img/404.svg" alt="">
-        <p class="text-light font-medium text-[24px]">Tidak Ada Agenda</p>
+    <div class="empty-image grid px-[20px] lg:px-[200px]">
+        <div class="w-full flex justify-center">
+            <img class="w-[200px] mb-2" src="img/404.svg" alt="">
+        </div>
+        <p class="text-light text-center font-medium text-[24px]">Tidak Ada Agenda</p>
     </div>
     <!-- Box Start -->
-    <div class="todos grid gap-y-[24px]">
+    <div class="todos grid gap-y-[24px] mb-[24px] px-[20px] lg:px-[200px]">
         <div class="flex justify-between gap-x-[16px] bg-black p-[16px] rounded-[12px] shadow-box2">
+            <!-- Item -->
             <div class="grid justify-items-start content-between">
                 <div class="flex items-center gap-x-[6px]">
                     <input class="peer" id="checkbox1" type="checkbox">
@@ -138,15 +114,22 @@
     </div>
     <!-- Box End -->
     <!-- Delete All Start -->
-    <div class="flex justify-end mt-[24px]">
+    <div class="flex justify-end px-[20px] lg:px-[200px] mb-[200px]">
         <button
-            class="delete-all py-[8px] px-[12px] rounded-[8px] bg-merah text-light font-medium text-[12px] flex items-center justify-center gap-x-2 w-[160px]">
-            <img src="img/trash.svg" alt="">Hapus
+            class="delete-all py-[8px] px-[12px] rounded-[8px] bg-merah text-light font-medium text-[12px] flex items-center justify-center gap-x-2 w-[160px] hover:bg-hoverm hover:ease-in transition-all duration-200 lg:text-[16px]">
+            <img class="lg:w-[16px]" src="img/trash.svg" alt="">Hapus
             Semua</button>
     </div>
     <!-- Delete All End -->
-    <!-- To Do List Agenda End -->
-    <!-- To Do List Container End -->
+
+    <!-- Footer Start -->
+    <div class="px-[24px] py-[24px] lg:px-[200px] lg:py-[40px] bg-black border-t-[1px] border-primary">
+        <div class="text-light grid lg:flex justify-between gap-y-[12px] text-[12px] lg:text-[16px]">
+            <p>@ehan 2024. All Rights Reserved.</p>
+            <p>To Do List Application</p>
+        </div>
+    </div>
+    <!-- Footer End -->
 
     <script src="src/js/script.js"></script>
 </body>
