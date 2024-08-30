@@ -90,8 +90,8 @@ dateFilterInput.addEventListener('change', (e) => {
 });
 
 refreshButton.addEventListener('click', () => {
-    dateFilter = '';  // Clear the date filter
-    dateFilterInput.value = '';  // Reset the date input field
+    dateFilter = ''; 
+    dateFilterInput.value = ''; 
     showTodos();
 });
 
