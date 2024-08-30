@@ -65,7 +65,6 @@ function getTodoHTML(todo, index) {
     `;
 }
 
-
 function showTodos() {
     if (todosJson.length == 0) {
         todosHTML.innerHTML = '';
@@ -160,7 +159,6 @@ function updateStatus(todo) {
   }
   localStorage.setItem("todos", JSON.stringify(todosJson));
 }
-
 
 function remove(todo) {
   const index = todo.dataset.index;
