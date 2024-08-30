@@ -21,7 +21,6 @@ const dateFilterInput = document.querySelector("#dateFilter");
 const refreshButton = document.getElementById('refreshButton');
 let dateFilter = '';
 
-
 showTodos();
 
 function getTodoHTML(todo, index) {
