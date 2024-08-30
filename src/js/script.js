@@ -1,13 +1,13 @@
-// let inputNama = prompt('Masukan Nama Anda', 'Ehan');
-// const namaUser = document.getElementById('namaUser');
-// const isiNama = document.createElement('p');
-// isiNama.textContent = `Nama: ${inputNama}`;
-// namaUser.appendChild(isiNama);
+let inputNama = prompt('Masukan Nama Anda', 'Ehan');
+const namaUser = document.getElementById('namaUser');
+const isiNama = document.createElement('p');
+isiNama.textContent = `Nama: ${inputNama}`;
+namaUser.appendChild(isiNama);
 
-// let role = prompt('Role Anda', 'Ui/Ux Designer')
-// const isiRole = document.createElement('p');
-// isiRole.textContent = `Role: ${role}`;
-// namaUser.appendChild(isiRole);
+let role = prompt('Role Anda', 'Ui/Ux Designer')
+const isiRole = document.createElement('p');
+isiRole.textContent = `Role: ${role}`;
+namaUser.appendChild(isiRole);
 
 const input = document.querySelector("input");
 const addButton = document.querySelector("#addButton");
