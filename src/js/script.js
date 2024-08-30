@@ -161,7 +161,6 @@ function updateStatus(todo) {
   localStorage.setItem("todos", JSON.stringify(todosJson));
 }
 
-
 function remove(todo) {
   const index = todo.dataset.index;
   const confirmDelete = confirm("Yakin ingin menghapus todo ini?");
