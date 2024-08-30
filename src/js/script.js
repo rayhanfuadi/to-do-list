@@ -90,11 +90,10 @@ dateFilterInput.addEventListener('change', (e) => {
 });
 
 refreshButton.addEventListener('click', () => {
-    dateFilter = ''; 
-    dateFilterInput.value = ''; 
+    dateFilter = '';  
+    dateFilterInput.value = '';  
     showTodos();
 });
-
 
 function addTodo(todo)  {
   input.value = "";
@@ -117,11 +116,10 @@ input.addEventListener("keyup", e => {
 addButton.addEventListener('click', function() {
     let todoText = input.value.trim();
     const todoLevel = document.getElementById('level').value;
-    const selectedDate = document.getElementById('dateInput').value; // Ambil nilai dari input date
+    const selectedDate = document.getElementById('dateInput').value;
     const currentDateTime = new Date();
     const currentTime = currentDateTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
 
-    // Ubah format tanggal ke format dengan nama bulan
     const options = { year: 'numeric', month: 'long', day: 'numeric' };
     const currentDate = selectedDate ? new Date(selectedDate).toLocaleDateString(undefined, options) : currentDateTime.toLocaleDateString(undefined, options);
 
@@ -130,7 +128,7 @@ addButton.addEventListener('click', function() {
             text: todoText,
             level: todoLevel,
             time: currentTime,
-            date: currentDate,  // Simpan tanggal dengan nama bulan
+            date: currentDate,
             status: 'pending'
         };
         todosJson.push(todo);
@@ -140,9 +138,6 @@ addButton.addEventListener('click', function() {
     }
 });
 
-
-
-// Fungsi untuk mengatur input date ke tanggal saat ini
 function setTodayDate() {
     const dateInput = document.getElementById('dateInput');
     const today = new Date();
@@ -152,10 +147,7 @@ function setTodayDate() {
     dateInput.value = `${year}-${month}-${day}`;
 }
 
-// Panggil fungsi ini saat halaman dimuat
 window.onload = setTodayDate;
-
-
 
 function updateStatus(todo) {
   let todoName = todo.parentElement.lastElementChild;
@@ -191,7 +183,6 @@ filters.forEach(function (el) {
     showTodos();
   });
 });
-
 
 deleteAllButton.addEventListener("click", () => {
     const confirmDelete = confirm("Yakin ingin menghapus semua todo?");
