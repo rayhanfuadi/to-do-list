@@ -29,7 +29,8 @@ body {
     display: flex;
     transition: transform 0.5s ease;
     overflow: hidden;
-    width: 100%; /* Atur sesuai kebutuhan */
+    width: 100%;
+    /* Atur sesuai kebutuhan */
 }
 
 .calendar-item {
@@ -40,7 +41,8 @@ body {
 }
 
 .calendar-item.active {
-    background-color: #FFD700; /* Misal, beri warna berbeda pada item aktif */
+    background-color: #FFD700;
+    /* Misal, beri warna berbeda pada item aktif */
 }
 
 
@@ -48,6 +50,7 @@ body {
     background-color: #FFD700;
     border-radius: 4px;
 }
+
 ::-webkit-calendar-picker-indicator:hover {
     background-color: #E3BC00;
     border-radius: 4px;
